@@ -3,15 +3,28 @@ import sys
 
 from flask import Flask, render_template, request
 
+from utils.support import fixImageName, getImages
+
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def index():
-    return "hi"
+    if request.method == 'GET':
+        allimages = getImages()
+
+        return render_template("index.html", allimages=allimages)
+
+    if request.method == 'POST':
+        topname = request.form.get('topname')
+        yearname = request.form.get('yearname')
+        bottomname = request.form.get('bottomname')
+        imagename = fixImageName(imageName=request.form.get('imagename'))
+
+        return f"{topname}, {yearname}, {bottomname}, {imagename}"
 
 
-@app.errorhandler(404)
+@ app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html"), 404
 
