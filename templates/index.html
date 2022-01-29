@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp Logo Generator</title>
+
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        .content {
+            max-width: 900px;
+            margin: auto;
+        }
+    </style>
+
+</head>
+
+<body class="content">
+
+    <div class="">
+        <form class="" action="" method="post" id="mainform">
+            <div class="">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">title</i>
+                    <input id="topname" name="topname" type="text" class="validate">
+                    <label for="topname">Top</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">create</i>
+                    <input id="yearname" name="yearname" type="text" class="validate">
+                    <label for="yearname">Middle</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">access_time</i>
+                    <input id="bottomname" name="bottomname" type="text" class="validate">
+                    <label for="bottomname">Bottom</label>
+                </div>
+
+                <label>Color</label>
+                <select class="browser-default" form="mainform" name="imagename">
+                    <option value="" disabled selected>
+                        Choose a color
+                    </option>
+                    {% for i in allimages %}
+                    <option value="{{ i }}">
+                        {{ i }}
+                    </option>
+                    {% endfor %}
+                </select>
+
+                <br>
+
+                <button class="btn waves-effect waves-light content" type="submit" value="Create">
+                    Create
+                    <i class="material-icons right">
+                        send
+                    </i>
+                </button>
+            </div>
+        </form>
+
+    </div>
+
+
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems, options);
+    });
+
+    // Or with jQuery
+
+    $(document).ready(function () {
+        $('select').formSelect();
+    });
+</script>
+
+</html>
