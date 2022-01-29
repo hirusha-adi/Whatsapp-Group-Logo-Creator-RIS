@@ -1,9 +1,10 @@
 import os
 import sys
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 
-from utils.support import fixImageName, getImages
+from utils.support import (fixImageName, getImages, makeImg_Style1,
+                           makeImg_Style2)
 
 app = Flask(__name__)
 
@@ -12,16 +13,22 @@ app = Flask(__name__)
 def index():
     if request.method == 'GET':
         allimages = getImages()
-
         return render_template("index.html", allimages=allimages)
 
     if request.method == 'POST':
         topname = request.form.get('topname')
-        yearname = request.form.get('yearname')
+        middlename = request.form.get('middlename')
         bottomname = request.form.get('bottomname')
-        imagename = fixImageName(imageName=request.form.get('imagename'))
-
-        return f"{topname}, {yearname}, {bottomname}, {imagename}"
+        stylename = request.form.get('stylename')
+        imagename2Edit = fixImageName(imageName=request.form.get('imagename'))
+        bgImg = os.path.join(os.getcwd(), "images", imagename2Edit)
+        if stylename == "1":
+            makeImg_Style1(title=topname, middle=middlename,
+                           bottom=bottomname, filename=bgImg, savename="result.jpg")
+        elif stylename == "2":
+            makeImg_Style2(title=topname, middle=middlename,
+                           bottom=bottomname, filename=bgImg, savename="result.jpg")
+        return send_file('result.jpg', attachment_filename=f"{topname}-{middlename}-{bottomname}.jpg")
 
 
 @ app.errorhandler(404)
