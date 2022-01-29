@@ -5,9 +5,10 @@ import os
 import sys
 import time
 
-from utils.other import __CREDITS__, __LOGO__, __MAIN_MENU__, __SLEEP__, __ResizeMenu__
-from utils.resize import jpg, jpeg, png
 from server import app
+from utils.other import (__CREDITS__, __LOGO__, __MAIN_MENU__, __SLEEP__,
+                         __ResizeMenu__)
+from utils.resize import jpeg, jpg, png
 
 
 def ENTIRE_PROGRAM():
@@ -19,7 +20,7 @@ def ENTIRE_PROGRAM():
 
     # Start Web Server
     if mmo == "1":
-        app.run("0.0.0.0", port=3334, debug=True)
+        app.run("0.0.0.0", port=3334, debug=False)
 
     # Resize Images
     elif mmo == "2":
@@ -41,6 +42,7 @@ def ENTIRE_PROGRAM():
             jpeg(filename=mm1_filename, savename=mm1_savename,
                  width=int(mm1_width), height=int(mm1_height))
 
+        # Resize .png
         elif mm1 == "3":
             png(filename=mm1_filename, savename=mm1_savename,
                 width=int(mm1_width), height=int(mm1_height))
