@@ -1,6 +1,75 @@
 # Whatsapp Group Logo Creator
 
-Create whatsapp group logos quickly and easily
+Create whatsapp group logos/images quickly and easily
+
+# Usage
+
+## `/`
+
+Self Explanatory Web User Interface
+
+## `/api`
+
+<!-- <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style> -->
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0lax">Parameter Name</th>
+    <th class="tg-0lax">Value</th>
+    <th class="tg-0lax">Example</th>
+    <th class="tg-0lax">Possible Values</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax">top</td>
+    <td class="tg-0lax">Top Text of the Image</td>
+    <td class="tg-0lax">?top=10E</td>
+    <td class="tg-0lax">*</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">middle</td>
+    <td class="tg-0lax">Middle Text of the Image</td>
+    <td class="tg-0lax">?middle=RIS</td>
+    <td class="tg-0lax">*</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">bottom</td>
+    <td class="tg-0lax">Bottom Text of the Image</td>
+    <td class="tg-0lax">?bottom=2022</td>
+    <td class="tg-0lax">*</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">style</td>
+    <td class="tg-0lax">Font Style</td>
+    <td class="tg-0lax">?style=2</td>
+    <td class="tg-0lax">1, 2</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">image</td>
+    <td class="tg-0lax">Background Image</td>
+    <td class="tg-0lax">?image=Blue</td>
+    <td class="tg-0lax">Blue, BlueLight, GreenDark, GreenLight, Orange, Purple, PurpleDark, Red, RedCloth, RedWall</td>
+  </tr>
+</tbody>
+</table>
+
+Possible Values for `image` are the file names(without the extension) inside `./images` directory
+
+### Sample Usage:
+
+- `http://ris.hirusha.xyz` - is the URL
+
+```
+http://ris.hirusha.xyz/api?top=10E&middle=RIS&bottom=2022&style=2&image=Blue
+```
 
 # Installation
 
