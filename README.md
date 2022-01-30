@@ -4,6 +4,10 @@ Create whatsapp group logos/images quickly and easily
 
 # Usage
 
+- `main.py` file is made for resizing images, downloading fonts + images to another directory if needed + for testing purposes
+
+- `server.py` is if the file to start the web server
+
 ## `/`
 
 Self Explanatory Web User Interface
@@ -123,3 +127,14 @@ python3 server.py # to start the web server
 6. run `python server.py` to start the web server
 
 # Screenshots
+
+- `/`
+
+  ![ss1](https://cdn.discordapp.com/attachments/877796755234783273/937195025077510204/unknown.png)
+  ![ss2](https://cdn.discordapp.com/attachments/877796755234783273/937195083030216764/unknown.png)
+
+- `/api`
+  ![ss3](https://cdn.discordapp.com/attachments/877796755234783273/937195257756545074/unknown.png)
+
+- `CLI`
+  ![ss4](https://cdn.discordapp.com/attachments/877796755234783273/937195352598118410/unknown.png)
