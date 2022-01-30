@@ -5,9 +5,11 @@ import os
 import sys
 import time
 
+import requests
+
 from server import app
 from utils.other import (__CREDITS__, __LOGO__, __MAIN_MENU__, __SLEEP__,
-                         __ResizeMenu__)
+                         __LoadStuffMenu__, __ResizeMenu__)
 from utils.resize import jpeg, jpg, png
 
 
@@ -57,6 +59,31 @@ def ENTIRE_PROGRAM():
               " to Width-" + str(mm1_width) + ", Height-" + str(mm1_width) +
               " and saved to " + mm1_savename if str(mm1_savename).lower().strip() else "result")
         time.sleep(__SLEEP__)
+
+    elif mmo == "3":
+        print(__LoadStuffMenu__)
+        mm3 = input("[?] Select an option[1-2]: ")
+        if mm3 == "1":
+            os.mkdir("fonts")
+            os.chdir("fonts")
+            futuraFont = requests.get(
+                "https://github.com/hirusha-adi/Whatsapp-Group-Logo-Creator-RIS/raw/main/fonts/futura.ttf").content
+            with open("futura.ttf", "wb") as futura:
+                futura.write(futuraFont)
+
+            trajanFont = requests.get(
+                "https://github.com/hirusha-adi/Whatsapp-Group-Logo-Creator-RIS/raw/main/fonts/trajan.ttf").content
+            with open("trajan.ttf", "wb") as trajan:
+                trajan.write(trajanFont)
+
+        if mm3 == "2":
+            os.mkdir("images")
+            os.chdir("images")
+
+            blueImg = requests.get(
+                "https://raw.githubusercontent.com/hirusha-adi/Whatsapp-Group-Logo-Creator-RIS/main/images/Blue.jpg").content
+            with open("Blue.jpg", "wb") as blue:
+                blue.write(blueImg)
 
 
 if __name__ == "__main__":
