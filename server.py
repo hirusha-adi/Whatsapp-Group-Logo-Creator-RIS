@@ -27,7 +27,7 @@ def index():
         elif stylename == "2":
             makeImg_Style2(title=topname, middle=middlename,
                            bottom=bottomname, filename=bgImg, savename="result.jpg")
-        return send_file('result.jpg', attachment_filename=f"{topname}-{middlename}-{bottomname}.jpg")
+        return send_file('result.jpg', download_name=f"{topname}-{middlename}-{bottomname}.jpg")
 
 
 @app.route("/api", methods=['GET'])
@@ -45,7 +45,7 @@ def api():
     elif stylename == "2":
         makeImg_Style2(title=topname, middle=middlename,
                        bottom=bottomname, filename=bgImg, savename="result.jpg")
-    return send_file('result.jpg', attachment_filename=f"{topname}-{middlename}-{bottomname}.jpg")
+    return send_file('result.jpg', download_name=f"{topname}-{middlename}-{bottomname}.jpg")
 
 
 @ app.errorhandler(404)
