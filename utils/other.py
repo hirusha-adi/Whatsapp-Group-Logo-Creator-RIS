@@ -16,13 +16,21 @@ Made by Hirusha Adikari
 
 __MAIN_MENU__ = r"""
     [1] Start Web Server
-    [2] Resize Images 
+    [2] Resize Images
+    [3] Download Stuff
+    [4] Credits
+    [5] Exit
 """
 
 __ResizeMenu__ = r"""
     [1] .jpg
     [2] .jpeg
     [3] .png
+"""
+
+__LoadStuffMenu__ = r"""
+    [1] Download Fonts
+    [2] Download Images
 """
 
 if os.name == "nt":
