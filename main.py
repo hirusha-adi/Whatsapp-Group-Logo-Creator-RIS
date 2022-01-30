@@ -80,10 +80,35 @@ def ENTIRE_PROGRAM():
             os.mkdir("images")
             os.chdir("images")
 
-            blueImg = requests.get(
-                "https://raw.githubusercontent.com/hirusha-adi/Whatsapp-Group-Logo-Creator-RIS/main/images/Blue.jpg").content
-            with open("Blue.jpg", "wb") as blue:
-                blue.write(blueImg)
+            imgData = (
+                ("https://raw.githubusercontent.com/hirusha-adi/Whatsapp-Group-Logo-Creator-RIS/main/images/Blue.jpg",
+                 "Blue.jpg"),
+                ("https://github.com/hirusha-adi/Whatsapp-Group-Logo-Creator-RIS/blob/main/images/BlueLight.jpg",
+                 "BlueLight.jpg"),
+                ("https://raw.githubusercontent.com/hirusha-adi/Whatsapp-Group-Logo-Creator-RIS/main/images/GreenDark.jpg",
+                 "GreenDark.jpg"),
+                ("https://raw.githubusercontent.com/hirusha-adi/Whatsapp-Group-Logo-Creator-RIS/main/images/GreenLight.jpeg",
+                 "GreenLight.jpeg"),
+                ("https://raw.githubusercontent.com/hirusha-adi/Whatsapp-Group-Logo-Creator-RIS/main/images/Orange.jpeg",
+                 "Orange.jpeg"),
+                ("https://raw.githubusercontent.com/hirusha-adi/Whatsapp-Group-Logo-Creator-RIS/main/images/Purple.jpg",
+                 "Purple.jpg"),
+                ("https://raw.githubusercontent.com/hirusha-adi/Whatsapp-Group-Logo-Creator-RIS/main/images/PurpleDark.jpg",
+                 "PurpleDark.jpg"),
+                ("https://raw.githubusercontent.com/hirusha-adi/Whatsapp-Group-Logo-Creator-RIS/main/images/Red.jpg",
+                 "Red.jpg"),
+                ("https://raw.githubusercontent.com/hirusha-adi/Whatsapp-Group-Logo-Creator-RIS/main/images/RedCloth.jpg",
+                 "RedCloth.jpg"),
+                ("https://raw.githubusercontent.com/hirusha-adi/Whatsapp-Group-Logo-Creator-RIS/main/images/RedWall.jpg",
+                 "RedWall.jpg")
+            )
+
+            for imgLink, imgName in imgData:
+                dataImg = requests.get(imgLink).content
+                with open(f"{imgName}", "wb") as fileImg:
+                    fileImg.write(dataImg)
+                print("[+] Downloaded " + str(imgName) +
+                      " and saved to ./images")
 
 
 if __name__ == "__main__":
