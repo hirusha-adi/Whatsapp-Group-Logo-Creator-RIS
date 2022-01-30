@@ -58,7 +58,7 @@ def ENTIRE_PROGRAM():
         print("[+] Resized " + mm1_filename +
               " to Width-" + str(mm1_width) + ", Height-" + str(mm1_width) +
               " and saved to " + mm1_savename if str(mm1_savename).lower().strip() else "result")
-        time.sleep(__SLEEP__)
+        input("Pess Enter to continue...")
 
     elif mmo == "3":
         print(__LoadStuffMenu__)
@@ -76,7 +76,9 @@ def ENTIRE_PROGRAM():
             with open("trajan.ttf", "wb") as trajan:
                 trajan.write(trajanFont)
 
-        if mm3 == "2":
+            input("Pess Enter to continue...")
+
+        elif mm3 == "2":
             os.mkdir("images")
             os.chdir("images")
 
@@ -110,10 +112,19 @@ def ENTIRE_PROGRAM():
                 print("[+] Downloaded " + str(imgName) +
                       " and saved to ./images")
 
+            input("Pess Enter to continue...")
+
+    elif mmo == "4":
+        print(__CREDITS__)
+        input("Pess Enter to continue...")
+
+    elif mmo == "5":
+        sys.exit("Exitting 'main.py'. Have a nice day!")
+
 
 if __name__ == "__main__":
     while True:
         try:
             ENTIRE_PROGRAM()
         except (KeyboardInterrupt, SystemExit):
-            break
+            sys.exit("\n\nExitting 'main.py'. Have a nice day!")
